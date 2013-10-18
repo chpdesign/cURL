@@ -2,6 +2,7 @@
 /**
  *
  * @author Nagy Gergely info@nagygergely.eu
+ * @url https://github.com/chpdesign/cURL
  * @version 0.1
  *
  */
