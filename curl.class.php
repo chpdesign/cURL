@@ -272,12 +272,19 @@ class cURL
 
 	/**
 	 * Set post
-	 * @param array $post
+	 * @param array|string $post
 	 */
 	public function setPost($post = array())
 	{
 		curl_setopt($this->ch, CURLOPT_POST,TRUE);
-		curl_setopt($this->ch, CURLOPT_POSTFIELDS,http_build_query($post));
+		if(is_array($post))
+		{
+			curl_setopt($this->ch, CURLOPT_POSTFIELDS,http_build_query($post));
+		}
+		else
+		{
+			curl_setopt($this->ch, CURLOPT_POSTFIELDS,$post);
+		}
 	}
 
 	/**
